@@ -5,7 +5,7 @@ class Ping extends Command{
         super(client,HELPER.COMMANDS.GENERICS.PING);
     }
 
-    async run(client,channel, tags, message, self){
+    async run(client,channel, tags, message, self,args){
         return client.say(channel,`Pong`)
     }
 }
