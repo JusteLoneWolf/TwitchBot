@@ -6,7 +6,14 @@ class Ping extends Command{
     }
 
     async run(client,channel, tags, message, self,args){
-        return client.say(channel,`Pong`)
+        let date = Date.now()
+        client.ping()
+            .then((data) => {
+                let date2 = Date.now()
+                return client.say(channel,`Pong `+(date2-date)+' ms')
+            }).catch((err) => {
+            //
+        });
     }
 }
 

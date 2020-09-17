@@ -7,6 +7,7 @@ class TwitchClient extends Client{
         super(option.TmiOption);
         this.commands = new Collection()
         this.aliases = new Collection()
+        this.userStorage = new Collection()
     }
 
     init(){

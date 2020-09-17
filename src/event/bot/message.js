@@ -1,4 +1,6 @@
 module.exports= (client,channel, tags, message, self) =>{
+    require('../../module/antispam')(client,channel, tags, message, self)
+    require('../../module/automod')(client,channel, tags, message, self)
     if(self || !message.startsWith('!')) return;
 
     const args = message.slice(1).split(' ');
