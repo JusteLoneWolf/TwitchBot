@@ -7,8 +7,17 @@ const HELPER =  {
                 usage:`ping`,
                 coolDown: 5000,
                 aliases:["pong","p"],
-                permission: "READ_MESSAGES",
                 category:"Générique",
+            }
+        },
+        MOD:{
+            BADWORD:{
+                name:"badword",
+                description:"Gere le filtrage de mauvais mot",
+                usage:`badword`,
+                coolDown: 5000,
+                aliases:["b"],
+                category:"Moderation",
             }
         }
     }

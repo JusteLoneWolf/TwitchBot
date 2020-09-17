@@ -2,7 +2,8 @@
   "name": "TwitchBot",
   "version": "1.0.0",
   "dependencies": {
-    "@discordjs/collection": "^0.1.6"
+    "@discordjs/collection": "^0.1.6",
+    "mongoose": "^5.10.5"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",

@@ -10,6 +10,8 @@ module.exports = {
             username: 'Zeka',
             password: process.env.OAUTH
         },
+
         channels: [ 'zechaos' ]
-    }
+    },
+    DBconnection: process.env.CONNECT,
 }

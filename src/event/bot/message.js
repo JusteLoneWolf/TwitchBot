@@ -1,9 +1,11 @@
 module.exports= (client,channel, tags, message, self) =>{
+
     require('../../module/antispam')(client,channel, tags, message, self)
     require('../../module/automod')(client,channel, tags, message, self)
     if(self || !message.startsWith('!')) return;
 
     const args = message.slice(1).split(' ');
+    console.log(args)
     const command = args.shift().toLowerCase();
 
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command));

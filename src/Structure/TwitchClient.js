@@ -2,18 +2,23 @@
 const {Client}= require('tmi.js')
 const {readdir} = require('fs')
 const Collection = require('./Collection')
+const DbManager = require('./DataBaseManager')
 class TwitchClient extends Client{
     constructor(option) {
         super(option.TmiOption);
         this.commands = new Collection()
         this.aliases = new Collection()
         this.userStorage = new Collection()
+        this.dbmanager = new DbManager()
     }
 
-    init(){
+    async init(){
         this.cmdload()
         this.evtloader()
+        require('../Utils/mongoose').init()
         this.login()
+        let data = await this.dbmanager.getWord('word')
+        if(!data) await this.dbmanager.createWord({name: 'word'})
     }
 
     cmdload(){
